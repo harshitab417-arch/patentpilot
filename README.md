@@ -11,6 +11,70 @@
 - Structured FTO report generation
 - MongoDB-backed analysis history
 
+## 🏛️ Architecture Overview
+
+PatentPilot is split into a modern React-based frontend, an async FastAPI backend, and specialized backend agents/services for chemistry, patent retrieval, scoring, and AI explanation.
+
+```mermaid
+flowchart LR
+    subgraph User
+        U[Researcher / IP Analyst]
+    end
+
+    subgraph Frontend[Next.js UI]
+        F1[Submit Molecule]
+        F2[Review Results]
+        F3[History & Reports]
+    end
+
+    subgraph Backend[FastAPI API]
+        B1[Request Validation]
+        B2[Job Coordinator]
+        B3[API Router]
+    end
+
+    subgraph Agents[Backend Agents]
+        A1[Retrieval Agent]
+        A2[Validation Agent]
+        A3[Scoring Agent]
+        A4[Analysis Agent]
+        A5[Report Agent]
+        A6[History Agent]
+    end
+
+    subgraph Services[External Services]
+        S1[SureChEMBL API]
+        S2[Gemini LLM]
+        S3[MongoDB]
+        S4[RDKit]
+    end
+
+    U --> F1
+    F1 --> B3
+    B3 --> B1
+    B1 --> B2
+    B2 --> A1
+    B2 --> A2
+    B2 --> A3
+    B2 --> A4
+    B2 --> A5
+    B2 --> A6
+    A1 --> S1
+    A2 --> S4
+    A4 --> S2
+    A6 --> S3
+    A5 --> S3
+    F2 --> B3
+    B3 --> S3
+    F3 --> B3
+    B3 --> S3
+
+    classDef service fill:#f8f8ff,stroke:#888,stroke-width:1px;
+    classDef agent fill:#e8f4ff,stroke:#1f77b4,stroke-width:1px;
+    class Frontend,Backend,User,Agents,Services service;
+    class A1,A2,A3,A4,A5,A6 agent;
+```
+
 ## 🔍 Retrieval Strategy
 
 ### Why Two Sources?
