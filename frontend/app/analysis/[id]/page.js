@@ -25,6 +25,23 @@ export default function AnalysisPage({ params }) {
   useEffect(() => {
     if (!jobId) return;
 
+    // Distinguish between a MongoDB ObjectId (analysis_id, 24 hex chars) and a UUID (job_id)
+    const isAnalysisId = /^[a-fA-F0-9]{24}$/.test(jobId);
+
+    if (isAnalysisId) {
+      getAnalysis(jobId)
+        .then((data) => {
+          setAnalysis(data);
+          setStatus('completed');
+          setLoading(false);
+        })
+        .catch((err) => {
+          setError(err.message || 'Failed to fetch analysis.');
+          setLoading(false);
+        });
+      return;
+    }
+
     let mounted = true;
     let intervalId;
 
