@@ -1,11 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Clock, AlertCircle } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Clock, AlertCircle, ChevronLeft } from 'lucide-react';
 import { listAnalyses } from '@/lib/api';
 import HistoryList from '@/components/HistoryList';
 
 export default function HistoryPage() {
+  const router = useRouter();
   const [analyses, setAnalyses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showLoading, setShowLoading] = useState(false);
@@ -31,6 +33,14 @@ export default function HistoryPage() {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-6 py-12 flex flex-col gap-8">
+      <button
+        className="self-start flex items-center gap-1 text-xs font-bold text-sage-gray-light hover:text-primary-green-light cursor-pointer py-1"
+        onClick={() => router.push('/')}
+      >
+        <ChevronLeft className="w-4 h-4" />
+        Back to Home
+      </button>
+
       {/* Page Header */}
       <div className="flex flex-col gap-1.5 text-left">
         <h1 className="text-2xl font-extrabold tracking-tight text-text-charcoal font-heading flex items-center gap-2">

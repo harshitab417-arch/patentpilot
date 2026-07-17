@@ -98,8 +98,18 @@ export default function HomePage() {
 
         {/* Right 3D Molecule visual column */}
         <div className="flex-1 flex justify-center items-center relative lg:min-h-[400px]">
-          <div className="absolute inset-0 bg-radial-gradient from-glow-green/10 to-transparent blur-3xl rounded-full w-[250px] h-[250px] mx-auto pointer-events-none" />
-          <div className="relative animate-float">
+          {/* Enhanced Sci-Fi Background Layer */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            {/* Spinning gradient portal */}
+            <div className="absolute w-[280px] h-[280px] rounded-full bg-gradient-to-tr from-emerald-400/20 to-teal-500/5 blur-3xl animate-[spin_15s_linear_infinite]" />
+            <div className="absolute w-[240px] h-[240px] rounded-full bg-gradient-to-bl from-glow-green/20 to-transparent blur-2xl animate-[spin_10s_linear_infinite_reverse]" />
+            
+            {/* High-tech rotating rings */}
+            <div className="absolute w-[320px] h-[320px] rounded-full border border-primary-green-light/10 border-dashed animate-[spin_20s_linear_infinite]" />
+            <div className="absolute w-[340px] h-[340px] rounded-full border border-primary-green-light/5 border-t-primary-green-light/20 animate-[spin_12s_linear_infinite_reverse]" />
+          </div>
+
+          <div className="relative animate-float z-10">
             <Molecule3D size="lg" />
           </div>
         </div>
