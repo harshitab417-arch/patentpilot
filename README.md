@@ -376,3 +376,23 @@ PatentPilot/
 ├── README.md
 └── .gitignore
 ```
+
+## 📸 Screenshots
+
+### Home Page
+![Home Page](frontend/assets/homepage.png)
+
+### Analysis Page
+![Analysis Page](frontend/assets/analysispage.png)
+
+### History Page
+![History Page](frontend/assets/historypage.png)
+
+### Overview
+![Overview](frontend/assets/overviewpage.png)
+
+### Patents
+![Patents](frontend/assets/patentspage.png)
+
+### Report
+![Report](frontend/assets/reportspage.png)
