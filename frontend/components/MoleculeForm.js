@@ -25,6 +25,18 @@ const EXAMPLES = [
     target: 'Adenosine Receptor',
     disease: 'Fatigue/Alertness',
   },
+  {
+    label: 'Acetaminophen',
+    smiles: 'CC(=O)Nc1ccc(O)cc1',
+    target: 'COX',
+    disease: 'Pain/Fever',
+  },
+  {
+    label: 'Diazepam',
+    smiles: 'CN1C(=O)CN=C(C2=C1C=CC(=C2)Cl)C3=CC=CC=C3',
+    target: 'GABA Receptor',
+    disease: 'Anxiety',
+  },
 ];
 
 export default function MoleculeForm() {
@@ -92,7 +104,7 @@ export default function MoleculeForm() {
           </label>
           <textarea
             id="smiles"
-            className="w-full font-mono text-xs p-4 rounded-xl border border-sage-gray-light/15 dark:border-sage-gray-dark/15 bg-slate-500/5 focus:bg-transparent focus:ring-1 focus:ring-glow-green focus:border-glow-green text-text-charcoal dark:text-text-offwhite placeholder-sage-gray-light/50 dark:placeholder-sage-gray-dark/40 outline-none transition-all duration-200 resize-y"
+            className="w-full font-mono text-xs p-4 rounded-xl border border-sage-gray-light/15 bg-white/50 focus:bg-white focus:ring-2 focus:ring-primary-green-light/30 focus:border-primary-green-light focus:shadow-[0_0_15px_rgba(21,128,61,0.15)] text-text-charcoal placeholder-sage-gray-light/50 outline-none transition-all duration-300 resize-y"
             value={smiles}
             onChange={(e) => { setSmiles(e.target.value); setError(''); }}
             placeholder="e.g. CC(=O)Oc1ccccc1C(=O)O"
@@ -111,7 +123,7 @@ export default function MoleculeForm() {
             <input
               id="target"
               type="text"
-              className="w-full text-xs px-4 py-3 rounded-xl border border-sage-gray-light/15 dark:border-sage-gray-dark/15 bg-slate-500/5 focus:bg-transparent focus:ring-1 focus:ring-glow-green focus:border-glow-green text-text-charcoal dark:text-text-offwhite placeholder-sage-gray-light/50 dark:placeholder-sage-gray-dark/40 outline-none transition-all duration-200"
+              className="w-full text-xs px-4 py-3 rounded-xl border border-sage-gray-light/15 bg-white/50 focus:bg-white focus:ring-2 focus:ring-primary-green-light/30 focus:border-primary-green-light focus:shadow-[0_0_15px_rgba(21,128,61,0.15)] text-text-charcoal placeholder-sage-gray-light/50 outline-none transition-all duration-300"
               value={target}
               onChange={(e) => setTarget(e.target.value)}
               placeholder="e.g. COX-2, EGFR"
@@ -126,7 +138,7 @@ export default function MoleculeForm() {
             <input
               id="disease"
               type="text"
-              className="w-full text-xs px-4 py-3 rounded-xl border border-sage-gray-light/15 dark:border-sage-gray-dark/15 bg-slate-500/5 focus:bg-transparent focus:ring-1 focus:ring-glow-green focus:border-glow-green text-text-charcoal dark:text-text-offwhite placeholder-sage-gray-light/50 dark:placeholder-sage-gray-dark/40 outline-none transition-all duration-200"
+              className="w-full text-xs px-4 py-3 rounded-xl border border-sage-gray-light/15 bg-white/50 focus:bg-white focus:ring-2 focus:ring-primary-green-light/30 focus:border-primary-green-light focus:shadow-[0_0_15px_rgba(21,128,61,0.15)] text-text-charcoal placeholder-sage-gray-light/50 outline-none transition-all duration-300"
               value={disease}
               onChange={(e) => setDisease(e.target.value)}
               placeholder="e.g. Rheumatoid Arthritis"
@@ -144,7 +156,7 @@ export default function MoleculeForm() {
             <button
               key={ex.label}
               type="button"
-              className="px-3 py-1 text-[11px] rounded-lg border border-sage-gray-light/10 dark:border-sage-gray-dark/10 bg-slate-500/5 hover:bg-primary-green-light/8 dark:hover:bg-primary-green-dark/8 hover:text-primary-green-light dark:hover:text-primary-green-dark text-sage-gray-light dark:text-sage-gray-dark cursor-pointer transition-all duration-200 active:scale-95"
+              className="px-3 py-1.5 text-[11px] font-medium rounded-lg border border-sage-gray-light/15 bg-white/60 shadow-sm hover:bg-primary-green-light hover:border-primary-green-light hover:text-white hover:shadow-md text-sage-gray-light cursor-pointer transition-all duration-300 active:scale-95"
               onClick={() => fillExample(ex)}
             >
               {ex.label}

@@ -14,9 +14,9 @@ export default function AnimatedBackground() {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* ─── Ambient Glow Blobs ─────────────────────────────────── */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-emerald-400/8 dark:bg-emerald-500/5 blur-[120px] mix-blend-screen animate-pulse-glow" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-glow-green/6 dark:bg-glow-green/3 blur-[120px] mix-blend-screen animate-pulse-glow" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-[30%] right-[15%] w-[35%] h-[35%] rounded-full bg-emerald-300/5 dark:bg-emerald-400/2 blur-[100px]" />
+      <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-[100%] bg-gradient-to-br from-emerald-400/15 to-teal-400/5 blur-[120px] animate-[spin_40s_linear_infinite]" />
+      <div className="absolute bottom-[-10%] right-[-20%] w-[55%] h-[55%] rounded-[100%] bg-gradient-to-bl from-glow-green/15 to-emerald-300/5 blur-[120px] animate-[spin_30s_linear_infinite_reverse]" />
+      <div className="absolute top-[20%] right-[10%] w-[40%] h-[40%] rounded-full bg-emerald-300/10 blur-[100px] animate-pulse-glow" />
 
       {/* ─── Fine Grid Overlay ─────────────────────────────────────── */}
       <div 

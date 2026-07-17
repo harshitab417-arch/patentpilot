@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html 
       lang="en" 
-      className={`dark ${inter.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <body className="antialiased">

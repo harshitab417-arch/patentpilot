@@ -55,9 +55,9 @@ export default function HomePage() {
             <span className="text-[11px] font-bold uppercase tracking-wider">AI-Powered Patent Intelligence</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-none text-text-charcoal dark:text-text-offwhite font-heading">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1] text-text-charcoal font-heading">
             AI Patent <br />
-            <span className="bg-gradient-to-r from-primary-green-light via-emerald-600 to-glow-green dark:from-primary-green-dark dark:via-emerald-400 dark:to-glow-green bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary-green-light via-emerald-500 to-glow-green bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(21,128,61,0.2)]">
               Intelligence
             </span>
           </h1>
@@ -67,9 +67,12 @@ export default function HomePage() {
           </p>
 
           <div className="flex items-center gap-4 mt-2">
-            <button onClick={scrollToForm} className="btn-primary flex items-center gap-2 group">
-              Analyze Molecule
-              <Sparkles className="w-4 h-4 text-white dark:text-[#04120C] group-hover:rotate-12 transition-transform duration-300" />
+            <button onClick={scrollToForm} className="btn-primary flex items-center gap-2 group relative overflow-hidden animate-pulse-glow hover:animate-none">
+              <span className="relative z-10 flex items-center gap-2">
+                Analyze Molecule
+                <Sparkles className="w-4 h-4 text-white group-hover:rotate-12 transition-transform duration-300" />
+              </span>
+              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:animate-[shine_1s_ease-out_forwards]" />
             </button>
             <button onClick={scrollToForm} className="btn-ghost">
               View Demo
@@ -118,15 +121,15 @@ export default function HomePage() {
             return (
               <div 
                 key={i} 
-                className="glass-card p-6 rounded-2xl flex flex-col gap-3 text-left hover:scale-[1.02] transition-transform duration-300"
+                className="glass-card p-6 rounded-3xl flex flex-col gap-3 text-left group"
               >
-                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary-green-light/8 dark:bg-primary-green-dark/8 border border-primary-green-light/15 dark:border-primary-green-dark/15 text-primary-green-light dark:text-primary-green-dark">
-                  <Icon className="w-5 h-5" />
+                <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-primary-green-light/8 border border-primary-green-light/15 text-primary-green-light transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary-green-light/15">
+                  <Icon className="w-6 h-6 transition-transform duration-300 group-hover:-rotate-6" />
                 </div>
-                <h3 className="font-bold text-sm text-text-charcoal dark:text-text-offwhite tracking-tight leading-none mt-1">
+                <h3 className="font-extrabold text-base text-text-charcoal tracking-tight leading-none mt-2">
                   {cap.title}
                 </h3>
-                <p className="text-[11px] text-sage-gray-light dark:text-sage-gray-dark leading-relaxed leading-normal mt-1">
+                <p className="text-xs text-sage-gray-light leading-relaxed mt-1">
                   {cap.description}
                 </p>
               </div>
@@ -135,18 +138,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── Legal Disclaimer Footer ───────────────────────────── */}
-      <footer className="glass-card p-6 rounded-2xl flex items-start gap-4 border-rose-500/20 dark:border-rose-500/20 bg-rose-500/5 dark:bg-rose-500/5 text-left max-w-3xl mx-auto">
-        <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-500/10 text-rose-500 shrink-0">
-          <ShieldAlert className="w-5 h-5" />
-        </div>
-        <div className="flex flex-col gap-1 text-[11px] leading-relaxed">
-          <span className="font-bold text-rose-500 text-xs">Legal Disclaimer</span>
-          <p className="text-sage-gray-light dark:text-sage-gray-dark">
-            PatentPilot is an automated pre-screening triage tool designed for research acceleration. It is not a substitute for professional legal Freedom-to-Operate (FTO) opinions. Always consult a qualified patent attorney for formal legal advice before making synthesis, manufacturing, or commercialization decisions.
-          </p>
-        </div>
-      </footer>
+
     </div>
   );
 }

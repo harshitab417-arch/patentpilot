@@ -80,16 +80,7 @@ export default function ReportView({ analysis }) {
         )}
       </div>
 
-      {/* ─── Legal Disclaimer ───────────────────────────────────── */}
-      <div className="p-4 rounded-2xl border border-rose-500/20 dark:border-rose-500/20 bg-rose-500/5 dark:bg-rose-500/5 flex items-start gap-3">
-        <ShieldAlert className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
-        <div className="flex flex-col gap-0.5 text-[11px] leading-relaxed">
-          <span className="font-bold text-rose-500 text-xs">Disclaimer</span>
-          <p className="text-sage-gray-light dark:text-sage-gray-dark">
-            This is an automated machine-learning evaluation and does not constitute a formal legal FTO opinion. Results should be vetted by a licensed patent attorney prior to making commercial or R&D decisions.
-          </p>
-        </div>
-      </div>
+
 
       {/* ─── Executive Summary ──────────────────────────────────── */}
       {executive_summary && (

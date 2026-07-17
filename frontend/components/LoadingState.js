@@ -46,7 +46,7 @@ export default function LoadingState({ status = 'pending' }) {
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-bg-forest-light dark:bg-bg-forest-dark z-50 overflow-y-auto px-4 py-8">
       {/* ─── Big Scanning Molecule 3D Visual ────────────────────── */}
-      <div className="mb-6 relative flex items-center justify-center">
+      <div className="mb-1 relative flex items-center justify-center">
         <Molecule3D size="xl" scanning={true} />
       </div>
 
